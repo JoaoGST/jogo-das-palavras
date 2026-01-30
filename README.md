@@ -109,6 +109,6 @@ Este projeto foi desenvolvido como **um exercício pessoal de Flask e Python**, 
 
 ---
 
-💖 Obrigado por conferir este projeto!
+##💖 Obrigado por conferir este projeto!
 
 Divirta-se jogando, aprendendo e compartilhando com os amigos.
