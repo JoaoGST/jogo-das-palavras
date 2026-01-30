@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+@keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 30px;
+    border-radius: 24px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    text-align: center;
+    width: 100%;
+    max-width: 450px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+h1, h2 {
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.jogador {
+    color: #23a6d5;
+}
+
+input[type="text"] {
+    padding: 12px 20px;
+    width: 100%;
+    margin-bottom: 15px;
+    border-radius: 12px;
+    border: 2px solid #eee;
+    outline: none;
+    font-size: 1rem;
+}
+
+button[type="submit"], .botao {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 12px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s, filter 0.2s;
+    height: 48px;
+    font-size: 14px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+button[type="submit"] { background: #e73c7e; }
+.botao { background: #23a6d5; }
+
+button:hover, .botao:hover {
+    filter: brightness(1.1);
+    transform: scale(1.02);
+}
+
+.botoes {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.botoes a { text-decoration: none; }
+
+ul {
+    list-style: none;
+    margin-top: 20px;
+    max-height: 250px;
+    overflow-y: auto;
+    text-align: left;
+    padding-left: 0;
+}
+
+ul li {
+    background: rgba(255, 255, 255, 0.6);
+    margin-bottom: 8px;
+    padding: 10px 15px;
+    border-radius: 10px;
+    border-left: 4px solid #23d5ab;
+    word-break: break-all;
+}
+
+.mensagem {
+    margin-bottom: 15px;
+    color: #ff4757;
+    font-weight: 500;
+}
+
+@media (min-width: 480px) {
+    .botoes { flex-direction: row; }
+    .botao { flex: 1; }
+}

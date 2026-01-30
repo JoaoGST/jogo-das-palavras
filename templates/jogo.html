@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Jogo das Palavras</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="container">
+    {% if not letra %}
+        <h1>Escolha a letra da rodada</h1>
+        <form method="POST">
+            <input type="text" name="letra" maxlength="1" required>
+            <button type="submit">Iniciar rodada</button>
+        </form>
+    {% else %}
+        <h1>Letra da rodada: {{ letra }}</h1>
+        <h2>Vez de <span class="jogador">{{ jogador }}</span></h2>
+        {% if mensagem %}
+            <p class="mensagem">{{ mensagem }}</p>
+        {% endif %}
+
+        <form method="POST">
+            <input type="text" name="palavra" placeholder="Digite a palavra ou 'desistir'" required>
+            <button type="submit">Enviar</button>
+        </form>
+
+        {% if lista %}
+            <h2>Palavras adicionadas:</h2>
+            <ul>
+                {% for item in lista %}
+                    <li>{{ item }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+        <div class="botoes">
+            <a class="botao" href="{{ url_for('nova_letra') }}">Nova letra</a>
+        </div>
+    {% endif %}
+</div>
+</body>
+</html>
